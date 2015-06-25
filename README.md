@@ -3,7 +3,7 @@ E-IG
 
 E-IG is a non-profit organization, focused on providing standards and interfaces for common e-commerce related
 problems. We discuss about PHP, OpenSource, about E-commerce and about how current implementations can be solved in
-a better way, sharing ideas, acknowledge and expertise.
+a better way, sharing ideas, knowledge and expertise.
 
 Standards
 =========
