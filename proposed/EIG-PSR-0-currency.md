@@ -1,8 +1,8 @@
 #Currency Interfaces
 
-This document describes common interfaces for currencies and retrieving currencies as descriped in [ISO-4217](http://www.iso.org/iso/home/standards/currency_codes.htm).
+This document describes common interfaces for currencies and retrieving currencies as described in [ISO-4217](http://www.iso.org/iso/home/standards/currency_codes.htm).
 
-In addition to ISO-4217 a currency also defines it's symbol. A currency therefore consists of
+In addition to ISO-4217 a currency also defines its symbol. A currency therefore consists of
 
  - a name
  - an alphabetic code
@@ -17,7 +17,7 @@ In addition to ISO-4217 a currency also defines it's symbol. A currency therefor
 ```php
 <?php
 
-namespace Psr\Ecommerce\Currency;
+namespace Pesr\Currency;
 
 /**
  * Defines the methods a currency must have.
@@ -57,48 +57,48 @@ interface Currency
 	 */
 	public function getNumericCode();
 
-    /**
-     * Returns a list of ISO-3166-Alpha-3 country codes.
-     * 
-     * The list contains the ISO-codes of those countries, that
-     * use the currency in circulation.
-     *
-     * @return string[]
-     */
-    public function getCountries();
+	 /**
+	 * Returns a list of ISO-3166-Alpha-3 country codes.
+	 * 
+	 * The list contains the ISO-codes of those countries, that
+	 * use the currency in circulation.
+	 *
+	 * @return string[]
+	 */
+	public function getCountries();
     
 	/**
 	 * This integer indicates how many digits may follow the
 	 * decimal point.
-     *
-     * The number of minor units can be used to format prices
-     * correctly.
-     * 
-     * **Example**
-     * 
-     *     The USD has 2 minor units. This means that two 
-     *     digit can stand on the right of the decimal point.
-     *     Or in other words that the USD is divisable by 
-     *     100 (10^2).
-     *     
-     *        10.02
-     *        23.40
-     *        4.47 
-     *     
-     *     The Viet Name Dong (VND) has 0 minor units. It should
-     *     not be displayed with a decimal point and following
-     *     digits.
-     *     
-     *        107
-     *        2340
-     *        563      
-     *
+	 *
+	 * The number of minor units can be used to format prices
+	 * correctly.
+	 * 
+	 * **Example**
+	 * 
+	 *     The USD has 2 minor units. This means that two 
+	 *     digit can stand on the right of the decimal point.
+	 *     Or in other words that the USD is divisable by 
+	 *     100 (10^2).
+	 *     
+	 *        10.02
+	 *        23.40
+	 *        4.47 
+	 *     
+	 *     The Viet Name Dong (VND) has 0 minor units. It should
+	 *     not be displayed with a decimal point and following
+	 *     digits.
+	 *     
+	 *        107
+	 *        2340
+	 *        563      
+	 *
 	 * @return integer
 	 */
 	public function getMinorUnits()
 
 	/**
-	 * The name of the currency.
+	 * The name of the currency in English.
 	 * 
 	 * **Example**
 	 * 
@@ -112,13 +112,13 @@ interface Currency
 
 	/**
 	 * The symbol which can be used when displaying prices.
-     *
-     * If a currency does not have a symbol, the alphabetic code
-     * should be returned an used.
-     * 
-     * Please note, currency symbols are not necessarily unique.
-     * The alphabetic code may be used instead, if the meaning of 
-     * the symbol is unclear. 
+	 *
+	 * If a currency does not have a symbol, the alphabetic code
+	 * should be returned and used.
+	 * 
+	 * Please note, currency symbols are not necessarily unique.
+	 * The alphabetic code may be used instead, if the meaning of 
+	 * the symbol is unclear. 
 	 *
 	 * @return string
 	 */
@@ -129,7 +129,7 @@ interface Currency
 ```php
 <?php
 
-namespace Psr\Ecommerce\Currency;
+namespace Pesr\Currency;
 
 /**
  * Defines how Currencies can be retrieved, while hiding the exact retrieval scheme.
@@ -143,7 +143,7 @@ interface CurrencyRepository
 	 * Returns the currency identified by the given alphabetic code.
 	 *  
 	 * This method MUST always return a currency. It MUST NOT return 
-	 * anything else (liek null or false).
+	 * anything else (like null or false).
 	 * 
 	 * @return Currency
 	 * 
@@ -189,7 +189,7 @@ interface CurrencyRepository
 ```php
 <?php
 
-namespace Psr\Ecommerce\Currency;
+namespace Pesr\Currency;
 
 /**
  * Exception interface for invalid currency arguments.
