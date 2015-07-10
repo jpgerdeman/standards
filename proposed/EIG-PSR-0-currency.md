@@ -195,7 +195,7 @@ namespace Pesr\Currency;
  * Exception interface for invalid currency arguments.
  *
  * Any time a currency is retrieved with an invalid code, the method
- * MUST throw an exception class which implements Psr\Ecommerce\Currency\InvalidCurrencyException
+ * MUST throw an exception class which implements Pesr\Currency\InvalidCurrencyException
  */
 interface InvalidCurrencyException {}
 ```
